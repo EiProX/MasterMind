@@ -108,6 +108,7 @@ Mastermind est un jeu de réflexion où le joueur doit deviner une combinaison s
 ## Maquette
 
 - Menu de base :
+  
     ```cpp
   =============================
             Mastermind
@@ -119,6 +120,7 @@ Mastermind est un jeu de réflexion où le joueur doit deviner une combinaison s
   Votre choix : _
 
 - Après avoir choisi Nouvelle Partie :
+  
     ```cpp
 
   =============================
@@ -134,6 +136,7 @@ Mastermind est un jeu de réflexion où le joueur doit deviner une combinaison s
   Votre tentative (R, V, B, J, O, P) : _
 
 - En cas de victoire :
+  
     ```cpp
 
     =============================
@@ -145,6 +148,7 @@ Mastermind est un jeu de réflexion où le joueur doit deviner une combinaison s
     Rejouer ? (O/N) : _
 
 - Règles du jeu :
+  
     ```cpp
 
     =============================
@@ -159,4 +163,4 @@ Mastermind est un jeu de réflexion où le joueur doit deviner une combinaison s
        - Mal placés : Nombre de couleurs correctes mais mal positionnées.
     4. Vous avez 10 tentatives pour deviner la combinaison.
     =============================
-Appuyez sur une touche pour revenir au menu principal.
+    Appuyez sur une touche pour revenir au menu principal.
