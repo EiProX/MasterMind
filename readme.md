@@ -82,5 +82,12 @@ Mastermind est un jeu de réflexion où le joueur doit deviner une combinaison s
 - Affiche les résultats du tour sous la forme :
   ```java
   Bien placés = 2, Mal placés = 1
+5. **Affichage du menu principal**
+   ```cpp
+   void afficherMenu();
+- Propose les options : Nouvelle partie, Règles du jeu, Quitter.
 
-   
+6. **Logique principale du jeu**
+   ```cpp
+   void jouerPartie();
+- Gère les tentatives, affiche les messages et vérifie les conditions de fin de partie.
