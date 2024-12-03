@@ -154,7 +154,7 @@ Mastermind est un jeu de réflexion où le joueur doit deviner une combinaison s
     =============================
               Règles du Jeu
     =============================
-    1. Une combinaison de 4 couleurs est générée aléatoirement.
+    1. Une combinaison de 5 couleurs est générée aléatoirement.
     2. Les couleurs disponibles sont :
        R = Rouge, V = Vert, B = Bleu
        J = Jaune, O = Orange, P = Violet
