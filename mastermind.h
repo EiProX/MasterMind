@@ -8,7 +8,13 @@
 #ifndef mastermind_h
 #define mastermind_h
 
-using namespace std
+#include <iostream>
+#include <cstring>
+#include <time>
+#include <random>
+
+
+using namespace std;
 
 
 #endif /* MY_CLASS_H */
