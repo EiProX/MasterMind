@@ -63,31 +63,44 @@ Mastermind est un jeu de réflexion où le joueur doit deviner une combinaison s
 ## Fonctions principales
 
 1. **Génération de la combinaison secrète**
+   
    ```cpp
    void genererCombinaison(char combinaisonSecrete[]);
+   
 - Génère une combinaison aléatoire de 4 couleurs parmi celles disponibles.
 
 2. **Lecture de la tentative du joueur**
+   
    ```cpp
    void lireTentative(char tentative[]);
+   
 - Demande au joueur d’entrer une combinaison de 4 couleurs et vérifie sa validité.
 
 3. **Calcul des indices**
+   
    ```cpp
    void calculerIndices(const char combinaisonSecrete[], const char tentative[], int& bienPlaces, int& malPlaces);
+   
 - Compare la tentative avec la combinaison secrète et met à jour les variables `bienPlaces` et `malPlaces`.
+  
 4. **Affichage des indices**
+   
    ```cpp
    void afficherIndices(int bienPlaces, int malPlaces);
 - Affiche les résultats du tour sous la forme :
   ```java
   Bien placés = 2, Mal placés = 1
+  
 5. **Affichage du menu principal**
+   
    ```cpp
    void afficherMenu();
+   
 - Propose les options : Nouvelle partie, Règles du jeu, Quitter.
 
 6. **Logique principale du jeu**
+   
    ```cpp
    void jouerPartie();
+   
 - Gère les tentatives, affiche les messages et vérifie les conditions de fin de partie.
