@@ -104,3 +104,54 @@ Mastermind est un jeu de réflexion où le joueur doit deviner une combinaison s
    void jouerPartie();
    
 - Gère les tentatives, affiche les messages et vérifie les conditions de fin de partie.
+
+## Maquette
+
+=============================
+          Mastermind
+=============================
+1. Nouvelle Partie
+2. Règles du Jeu
+3. Quitter
+=============================
+Votre choix : _
+
+- Après avoir choisi Nouvelle Partie :  
+
+=============================
+      Devinez la combinaison
+=============================
+Tentatives restantes : 10
+
+Historique :
+1. RVBO - Bien placés : 2, Mal placés : 1
+2. BVRP - Bien placés : 1, Mal placés : 2
+3. ----  - Bien placés : -, Mal placés : -
+
+Votre tentative (R, V, B, J, O, P) : _
+
+- En cas de victoire :
+  
+=============================
+         Partie Terminée
+=============================
+Vous avez perdu.
+La combinaison était : RVBJ
+=============================
+Rejouer ? (O/N) : _
+
+- Règles du jeu :
+
+=============================
+          Règles du Jeu
+=============================
+1. Une combinaison de 4 couleurs est générée aléatoirement.
+2. Les couleurs disponibles sont :
+   R = Rouge, V = Vert, B = Bleu
+   J = Jaune, O = Orange, P = Violet
+3. Après chaque tentative, vous recevrez des indices :
+   - Bien placés : Nombre de couleurs à la bonne position.
+   - Mal placés : Nombre de couleurs correctes mais mal positionnées.
+4. Vous avez 10 tentatives pour deviner la combinaison.
+=============================
+Appuyez sur une touche pour revenir au menu principal.
