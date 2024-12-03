@@ -114,10 +114,10 @@ Mastermind est un jeu de réflexion où le joueur doit deviner une combinaison s
   2. Règles du Jeu
   3. Quitter
   =============================
-  Votre choix : _;
+  Votre choix : _
 
 - Après avoir choisi Nouvelle Partie :  
--
+
 =============================
       Devinez la combinaison
 =============================
@@ -131,7 +131,7 @@ Historique :
 Votre tentative (R, V, B, J, O, P) : _
 
 - En cas de victoire :
--  
+
 =============================
          Partie Terminée
 =============================
@@ -141,7 +141,7 @@ La combinaison était : RVBJ
 Rejouer ? (O/N) : _
 
 - Règles du jeu :
--
+
 =============================
           Règles du Jeu
 =============================
