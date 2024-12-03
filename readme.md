@@ -73,5 +73,7 @@ Mastermind est un jeu de réflexion où le joueur doit deviner une combinaison s
 - Demande au joueur d’entrer une combinaison de 4 couleurs et vérifie sa validité.
 
 3. **Calcul des indices**
-4. 
+```cpp
+void calculerIndices(const char combinaisonSecrete[], const char tentative[], int& bienPlaces, int& malPlaces);
+- Compare la tentative avec la combinaison secrète et met à jour les variables bienPlaces et malPlaces.
   
