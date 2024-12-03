@@ -142,7 +142,7 @@ Mastermind est un jeu de réflexion où le joueur doit deviner une combinaison s
     =============================
            Partie Terminée
     =============================
-    Vous avez perdu.
+    Vous avez gagner.
     La combinaison était : RVBJO
     =============================
     Rejouer ? (O/N) : _
