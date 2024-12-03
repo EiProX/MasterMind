@@ -8,5 +8,7 @@
 #ifndef mastermind_h
 #define mastermind_h
 
+using namespace std
+
 
 #endif /* MY_CLASS_H */
