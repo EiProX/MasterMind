@@ -129,8 +129,8 @@ Mastermind est un jeu de réflexion où le joueur doit deviner une combinaison s
   Tentatives restantes : 10
 
   Historique :
-  1. RVBO - Bien placés : 2, Mal placés : 1
-  2. BVRP - Bien placés : 1, Mal placés : 2
+  1. RVBOP - Bien placés : 2, Mal placés : 1
+  2. BVRPJ - Bien placés : 1, Mal placés : 2
   3. ----  - Bien placés : -, Mal placés : -
 
   Votre tentative (R, V, B, J, O, P) : _
@@ -143,7 +143,7 @@ Mastermind est un jeu de réflexion où le joueur doit deviner une combinaison s
            Partie Terminée
     =============================
     Vous avez perdu.
-    La combinaison était : RVBJ
+    La combinaison était : RVBJO
     =============================
     Rejouer ? (O/N) : _
 
