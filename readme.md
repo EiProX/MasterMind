@@ -76,4 +76,11 @@ Mastermind est un jeu de réflexion où le joueur doit deviner une combinaison s
    ```cpp
    void calculerIndices(const char combinaisonSecrete[], const char tentative[], int& bienPlaces, int& malPlaces);
 - Compare la tentative avec la combinaison secrète et met à jour les variables `bienPlaces` et `malPlaces`.
-  
+4. **Affichage des indices**
+   ```cpp
+   void afficherIndices(int bienPlaces, int malPlaces);
+  - Affiche les résultats du tour sous la forme :
+   ```java
+   Bien placés = 2, Mal placés = 1
+
+   
