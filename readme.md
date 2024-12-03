@@ -47,7 +47,7 @@ Mastermind est un jeu de réflexion où le joueur doit deviner une combinaison s
 ## Variables utilisées
 
 1. **Constantes**
-   - `const int LONGUEUR_COMBINAISON = 4;` : Longueur de la combinaison secrète.
+   - `const int LONGUEUR_COMBINAISON = 5;` : Longueur de la combinaison secrète.
    - `const int TENTATIVES_MAX = 10;` : Nombre maximum de tentatives.
    - `const char COULEURS_DISPONIBLES[6] = {'R', 'V', 'B', 'J', 'O', 'P'};`
 
