@@ -66,4 +66,12 @@ Mastermind est un jeu de réflexion où le joueur doit deviner une combinaison s
    ```cpp
    void genererCombinaison(char combinaisonSecrete[]);
 - Génère une combinaison aléatoire de 4 couleurs parmi celles disponibles.
+
+2. **Lecture de la tentative du joueur**
+   ```cpp
+   void lireTentative(char tentative[]);
+- Demande au joueur d’entrer une combinaison de 4 couleurs et vérifie sa validité.
+
+3. **Calcul des indices**
+4. 
   
