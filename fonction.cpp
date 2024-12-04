@@ -33,3 +33,37 @@ void afficherRegles() {
     cout << "4. Vous avez 10 tentatives pour deviner la combinaison." << endl;
     cout << "=============================" << endl;
 }
+void genererCombinaison(char combinaisonSecrete[LONGUEUR_COMBINAISON])
+{
+    srand(time(0));
+    for (int i=0 ; i<LONGUEUR_COMBINAISON; i++){
+        combinaisonSecrete[i]= COULEURS_DISPONIBLES[rand()%6];
+        cout<<combinaisonSecrete[i]<<endl;
+    }
+void lireTentative(char tentative[]){
+    bool valide;
+    do{
+        cout<<"Les couleurs disponibles sont R, V, B, J, O P "<<endl;
+        cin>>tentative;
+        valide=(strlen(tentative)==LONGUEUR_COMBINAISON);
+        for (int i=0 ;i<LONGUEUR_COMBINAISON &&valide ;i++){
+
+           bool caractereValide = false;
+
+           for(int j=0 ;j<strlen(COULEURS_DISPONIBLES);j++){
+
+                if(tentative[i]==COULEURS_DISPONIBLES[j]){
+                    caractereValide=true;
+                    break;
+
+                }
+           }
+           if(!caractereValide)
+               valide=false;
+
+       }
+        if(!valide)
+            cout<<"Les caractere saisie ne sont pas valide"<<endl;
+    } while(!valide);
+
+ }
