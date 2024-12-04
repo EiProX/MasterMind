@@ -9,6 +9,5 @@
 
 int main()
 {
-    afficherMenu();
     return 0;
 }
