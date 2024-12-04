@@ -33,3 +33,12 @@ void afficherRegles() {
     cout << "4. Vous avez 10 tentatives pour deviner la combinaison." << endl;
     cout << "=============================" << endl;
 }
+
+void genererCombinaison(char combinaisonSecrete[LONGUEUR_COMBINAISON])
+{
+    srand(time(0));
+    for (int i=0 ; i<LONGUEUR_COMBINAISON; i++){
+        combinaisonSecrete[i]= COULEURS_DISPONIBLES[rand()%6];
+        cout<<combinaisonSecrete[i]<<endl;
+    }
+}
