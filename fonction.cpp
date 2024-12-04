@@ -6,6 +6,21 @@
 *********************************************************/
 
 
+#include <mastermind.h>
+
+
+
+void afficherMenu(){
+    cout << "=============================" << endl;
+    cout << "        Mastermind" << endl;
+    cout << "=============================" << endl;
+    cout << "1. Nouvelle Partie" << endl;
+    cout << "2. Règles du Jeu" << endl;
+    cout << "3. Quitter" << endl;
+    cout << "=============================" << endl;
+}
+
+
 void afficherRegles() {
     cout << "=============================" << endl;
     cout << "          Règles du Jeu      " << endl;
@@ -15,6 +30,6 @@ void afficherRegles() {
     cout << "3. Indices après chaque tentative :" << endl;
     cout << "   - Bien placés : Couleurs correctes à la bonne position." << endl;
     cout << "   - Mal placés : Couleurs correctes mais à une mauvaise position." << endl;
-    cout << "4. Vous avez 10 tentatives pour deviner la combinaison." << std;
-    cout << "=============================" << std;
+    cout << "4. Vous avez 10 tentatives pour deviner la combinaison." << endl;
+    cout << "=============================" << endl;
 }
