@@ -15,6 +15,6 @@ void afficherRegles() {
     cout << "3. Indices après chaque tentative :" << endl;
     cout << "   - Bien placés : Couleurs correctes à la bonne position." << endl;
     cout << "   - Mal placés : Couleurs correctes mais à une mauvaise position." << endl;
-    cout << "4. Vous avez 10 tentatives pour deviner la combinaison." << std;
-    cout << "=============================" << std;
+    cout << "4. Vous avez 10 tentatives pour deviner la combinaison." << endl;
+    cout << "=============================" << endl;
 }
