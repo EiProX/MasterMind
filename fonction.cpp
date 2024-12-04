@@ -6,6 +6,21 @@
 *********************************************************/
 
 
+#include <mastermind.h>
+
+
+
+void afficherMenu(){
+    cout << "=============================" << endl;
+    cout << "        Mastermind" << endl;
+    cout << "=============================" << endl;
+    cout << "1. Nouvelle Partie" << endl;
+    cout << "2. Règles du Jeu" << endl;
+    cout << "3. Quitter" << endl;
+    cout << "=============================" << endl;
+}
+
+
 void afficherRegles() {
     cout << "=============================" << endl;
     cout << "          Règles du Jeu      " << endl;
