@@ -25,7 +25,9 @@ void afficherRegles() {
     cout << "=============================" << endl;
     cout << "          Règles du Jeu      " << endl;
     cout << "=============================" << endl;
-    cout << "1. Une combinaison de 5 couleurs est générée aléatoirement." << endl;
+    cout << "1. Une combinaison de 5 couleurs est générée aléatoirement :" << endl;
+    cout << "   - Il est autorisé de mettre plusieurs fois la même couleur. " <<endl;
+    cout << "   - Un caractère déjà utilisé comme bien/mal placé ne sera pas compté une seconde fois." <<endl;
     cout << "2. Couleurs possibles : R (Rouge), V (Vert), B (Bleu), J (Jaune), O (Orange), P (Violet)." << endl;
     cout << "3. Indices après chaque tentative :" << endl;
     cout << "   - Bien placés : Couleurs correctes à la bonne position." << endl;
