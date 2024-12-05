@@ -5,10 +5,7 @@
 * Mis à jour le : 03/12/2024 par EiProX
 *********************************************************/
 
-
 #include <mastermind.h>
-
-
 
 void afficherMenu(){
     cout << "=============================" << endl;
@@ -21,18 +18,22 @@ void afficherMenu(){
 }
 
 
-void afficherRegles() {
+void afficherRegles(){
     cout << "=============================" << endl;
-    cout << "          Règles du Jeu      " << endl;
+    cout << "          Règles du Jeu" << endl;
     cout << "=============================" << endl;
     cout << "1. Une combinaison de 5 couleurs est générée aléatoirement." << endl;
-    cout << "2. Couleurs possibles : R (Rouge), V (Vert), B (Bleu), J (Jaune), O (Orange), P (Violet)." << endl;
-    cout << "3. Indices après chaque tentative :" << endl;
-    cout << "   - Bien placés : Couleurs correctes à la bonne position." << endl;
-    cout << "   - Mal placés : Couleurs correctes mais à une mauvaise position." << endl;
+    cout << "2. Les couleurs disponibles sont :" << endl;
+    cout << "   R = Rouge, V = Vert, B = Bleu" << endl;
+    cout << "   J = Jaune, O = Orange, P = Violet" << endl;
+    cout << "3. Après chaque tentative, vous recevrez des indices :" << endl;
+    cout << "   - Bien placés : Nombre de couleurs à la bonne position." << endl;
+    cout << "   - Mal placés : Nombre de couleurs correctes mais mal positionnées." << endl;
     cout << "4. Vous avez 10 tentatives pour deviner la combinaison." << endl;
     cout << "=============================" << endl;
+    cout << "Appuyez sur une touche pour revenir au menu principal." << endl;
 }
+
 
 void genererCombinaison(char combinaisonSecrete[LONGUEUR_COMBINAISON])
 {
@@ -73,9 +74,38 @@ void lireTentative(char tentative[]){
 
  }
 
+void calculerIndices(const char combinaisonSecrete[], const char tentative[], int& bienPlaces, int& malPlaces) {
+    bool marqueSecret[LONGUEUR_COMBINAISON] = {false};
+    bool marqueTentative[LONGUEUR_COMBINAISON] = {false};
+
+    bienPlaces = 0;
+    malPlaces = 0;
+
+    for (int i = 0; i < LONGUEUR_COMBINAISON; ++i) {
+        if (tentative[i] == combinaisonSecrete[i]) {
+            bienPlaces++;
+            marqueSecret[i] = true;   // Marquer comme utilisé dans la combinaison secrète
+            marqueTentative[i] = true; // Marquer comme utilisé dans la tentative
+        }
+    }
+
+    for (int i = 0; i < LONGUEUR_COMBINAISON; ++i) {
+        if (!marqueTentative[i]) { // Ne considérer que les caractères non déjà utilisés
+            bool found = false;    // Variable pour suivre si une correspondance est trouvée
+            for (int j = 0; j < LONGUEUR_COMBINAISON && !found; ++j) {
+                if (!marqueSecret[j] && tentative[i] == combinaisonSecrete[j]) {
+                    malPlaces++;
+                    marqueSecret[j] = true; // Marquer comme utilisé dans la combinaison secrète
+                    found = true;          // Correspondance trouvée
+                }
+            }
+        }
+    }
+}
+
 void afficherIndices(int bienPlaces, int malPlaces){
-    
+
     cout<<"Il y a "<< bienPlaces<<" pions bien placés"<<endl;
     cout<<"Il y a "<< malPlaces<<" pions mal placé"<<endl;
-    
+
 }
