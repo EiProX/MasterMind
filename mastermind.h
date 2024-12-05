@@ -33,5 +33,4 @@ void calculerIndices(const char combinaisonSecrete[], const char tentative[], in
 bool demanderRejouer();
 
 
-
 #endif // MASTERMIND_H

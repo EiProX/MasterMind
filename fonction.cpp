@@ -202,3 +202,12 @@ void jouerPartie() {
     if (!gagner)
     afficherFinDePartie(false, combinaisonSecrete);
 }
+
+void genererCombinaison(char combinaisonSecrete[LONGUEUR_COMBINAISON])
+{
+    srand(time(0));
+    for (int i=0 ; i<LONGUEUR_COMBINAISON; i++){
+        combinaisonSecrete[i]= COULEURS_DISPONIBLES[rand()%6];
+        cout<<combinaisonSecrete[i]<<endl;
+    }
+}
