@@ -20,15 +20,17 @@ const int TENTATIVES_MAX = 10; // Nombre maximum de tentatives.
 const char COULEURS_DISPONIBLES[6] = {'R', 'V', 'B', 'J', 'O', 'P'};
 
 
-
-void afficherMenu();
-void afficherRegles();
+void clearConsole();
+void afficherMenu();//
+int obtenirChoixMenu();//
+void afficherRegles();//
+void afficherEtatJeu(int tentativesRestantes, const char historique[][LONGUEUR_COMBINAISON + 1], const int bienPlaces[], const int malPlaces[], int tentativesUtilisées); //
+void afficherFinDePartie(bool victoire, const char combinaisonSecrete[]); //
 void jouerPartie();
-void genererCombinaison(char combinaisonSecrete[]);
-void lireTentative(char tentative[]);
-void calculerIndices(const char combinaisonSecrete[], const char tentative[], int& bienPlaces, int& malPlaces);
-void afficherIndices(int bienPlaces, int malPlaces);
-
+void genererCombinaison(char combinaisonSecrete[]);//
+void lireTentative(char tentative[]);//
+void calculerIndices(const char combinaisonSecrete[], const char tentative[], int& bienPlaces, int& malPlaces);//
+bool demanderRejouer();
 
 
 #endif // MASTERMIND_H
