@@ -9,6 +9,7 @@ Mastermind est un jeu de réflexion où le joueur doit deviner une combinaison s
 ## Règles du jeu
 
 - Une **combinaison secrète** de 5 couleurs est générée par l'ordinateur.
+- Il est autorisé de mettre plusieurs fois la même couleur.
 - Un caractère déjà utilisé comme bien/mal placé ne sera pas compté une seconde fois.
 - Le joueur doit deviner cette combinaison en un maximum de 10 tentatives.
 - Les couleurs disponibles sont :
