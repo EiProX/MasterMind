@@ -7,6 +7,15 @@
 
 #include <mastermind.h>
 
+int strlen(const char chaine[]) {
+    int longueur = 0;
+    while (chaine[longueur] != '\0') {
+        longueur++;
+    }
+
+    return longueur;
+}
+
 void clearConsole() {
     #if defined(_WIN32) || defined(_WIN64)
         system("cls"); // Commande pour Windows
@@ -70,7 +79,7 @@ void genererCombinaison(char combinaisonSecrete[]) {
 void lireTentative(char tentative[]){
     bool valide;
     do{
-        cout<<"Les couleurs disponibles sont R, V, B, J, O P "<<endl;
+        cout<<"Les couleurs disponibles sont R, V, B, J, O, P "<<endl;
         cin>>tentative;
         for (int i = 0; i < strlen(tentative); i++) {
             tentative[i] = toupper(tentative[i]);
@@ -141,7 +150,7 @@ void afficherEtatJeu(int tentativesRestantes, const char historique[][LONGUEUR_C
              << ", Mal placés : " << malPlaces[i] << endl;
     }
     for (int i = tentativesUtilisées; i < TENTATIVES_MAX; ++i) {
-        cout << i + 1 << ". ----  - Bien placés : -, Mal placés : -" << endl;
+        cout << i + 1 << ". -----  - Bien placés : -, Mal placés : -" << endl;
     }
 }
 
@@ -201,13 +210,4 @@ void jouerPartie() {
     }
     if (!gagner)
     afficherFinDePartie(false, combinaisonSecrete);
-}
-
-void genererCombinaison(char combinaisonSecrete[LONGUEUR_COMBINAISON])
-{
-    srand(time(0));
-    for (int i=0 ; i<LONGUEUR_COMBINAISON; i++){
-        combinaisonSecrete[i]= COULEURS_DISPONIBLES[rand()%6];
-        cout<<combinaisonSecrete[i]<<endl;
-    }
 }
