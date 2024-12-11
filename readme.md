@@ -23,9 +23,21 @@ Mastermind est un jeu de réflexion où le joueur doit deviner une combinaison s
 
     - Si l'utilisateur choisit l'option 2 :
     - L'utilisateur revient au menu principal après consultation.
+      
+3. Début de la partie
+
+    - Si l'utilisateur choisit 1 (Nouvelle Partie), le jeu démarre.
+    - La console est nettoyée et l'état initial est affiché :
+
+4. Tour de jeu
+
+    - Le joueur entre une tentative :
+    - La console est nettoyée, et l'état est mis à jour avec les résultats de la tentative :
+    - Le joueur continue d'entrer des tentatives jusqu'à deviner la combinaison ou épuiser les tentatives.
 
 
----
+
+   ---
 
 ## Règles du jeu
 
