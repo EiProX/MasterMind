@@ -44,6 +44,12 @@ Mastermind est un jeu de réflexion où le joueur doit deviner une combinaison s
         - Si le joueur n'a plus de tentatives :
           - Vous avez perdu.
           - La combinaison était : VJBJO
+            
+6. Rejouer ou quitter
+
+    - Si l'utilisateur entre O ou o, une nouvelle partie commence.
+    - Si l'utilisateur entre N ou n, il revient au menu principal ou quitte le programme selon le contexte.
+
    ---
 
 ## Règles du jeu
