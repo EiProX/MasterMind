@@ -6,6 +6,22 @@ Mastermind est un jeu de réflexion où le joueur doit deviner une combinaison s
 
 ---
 
+## Scénario
+
+1. Lancement du jeu
+
+    - Le programme démarre et affiche le menu principal :
+  
+      
+- L'utilisateur entre un choix :
+
+    1 : Démarre une nouvelle partie.
+    2 : Affiche les règles du jeu.
+    3 : Quitte le programme.
+
+
+---
+
 ## Règles du jeu
 
 - Une **combinaison secrète** de 5 couleurs est générée par l'ordinateur.
@@ -166,3 +182,5 @@ Mastermind est un jeu de réflexion où le joueur doit deviner une combinaison s
     4. Vous avez 10 tentatives pour deviner la combinaison.
     =============================
     Appuyez sur une touche pour revenir au menu principal.
+
+
