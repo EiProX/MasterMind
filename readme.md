@@ -35,8 +35,11 @@ Mastermind est un jeu de réflexion où le joueur doit deviner une combinaison s
     - La console est nettoyée, et l'état est mis à jour avec les résultats de la tentative :
     - Le joueur continue d'entrer des tentatives jusqu'à deviner la combinaison ou épuiser les tentatives.
 
-
-
+5. Fin de partie
+   - Cas 1 : Victoire
+        - Si le joueur devine la combinaison :
+          Vous avez gagné !
+          La combinaison était : VJBJO
    ---
 
 ## Règles du jeu
