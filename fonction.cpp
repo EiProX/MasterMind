@@ -7,6 +7,7 @@
 
 #include <mastermind.h>
 
+// Fonction qui calcule la longueur d'une chaîne de caractères
 int strlen(const char chaine[]) {
     int longueur = 0;
     while (chaine[longueur] != '\0') {
@@ -16,6 +17,7 @@ int strlen(const char chaine[]) {
     return longueur;
 }
 
+// Fonction pour effacer l'écran en fonction du système d'exploitation
 void clearConsole() {
     #if defined(_WIN32) || defined(_WIN64)
         system("cls"); // Commande pour Windows
@@ -24,7 +26,7 @@ void clearConsole() {
     #endif
 }
 
-
+// Fonction pour afficher le menu principal du jeu
 void afficherMenu(){
     clearConsole();
     cout << "=============================" << endl;
@@ -36,6 +38,7 @@ void afficherMenu(){
     cout << "=============================" << endl;
 }
 
+// Fonction pour obtenir le choix de l'utilisateur dans le menu
 int obtenirChoixMenu() {
     int choix;
     cout << "Votre choix : ";
@@ -43,6 +46,7 @@ int obtenirChoixMenu() {
     return choix;
 }
 
+// Fonction pour afficher les règles du jeu
 void afficherRegles(){
     clearConsole();
     cout << "=============================" << endl;
@@ -59,54 +63,49 @@ void afficherRegles(){
     cout << "=============================" << endl;
     cout << "Appuyez sur une touche pour revenir au menu principal." << endl;
     unsigned char sortir;
-    cin>>sortir;
+    cin >> sortir;
     if(sortir != NULL){
         afficherMenu();
     }
 }
 
-
-
+// Fonction pour générer une combinaison secrète aléatoire de couleurs
 void genererCombinaison(char combinaisonSecrete[]) {
-    srand(time(0));
+    srand(time(0));  // Initialisation de la fonction aléatoire
     for (int i = 0; i < LONGUEUR_COMBINAISON; ++i) {
-        combinaisonSecrete[i] = COULEURS_DISPONIBLES[rand() % 6];
+        combinaisonSecrete[i] = COULEURS_DISPONIBLES[rand() % 6]; // Choisir une couleur aléatoire
     }
-    combinaisonSecrete[LONGUEUR_COMBINAISON] = '\0'; // Terminer avec un caractère nul
+    combinaisonSecrete[LONGUEUR_COMBINAISON] = '\0'; // Terminer la chaîne par un caractère nul
 }
 
-
+// Fonction pour lire et valider la tentative de l'utilisateur
 void lireTentative(char tentative[]){
     bool valide;
     do{
-        cout<<"Les couleurs disponibles sont R, V, B, J, O, P "<<endl;
-        cin>>tentative;
+        cout << "Les couleurs disponibles sont R, V, B, J, O, P " << endl;
+        cin >> tentative;
         for (int i = 0; i < strlen(tentative); i++) {
-            tentative[i] = toupper(tentative[i]);
+            tentative[i] = toupper(tentative[i]);  // Convertir en majuscule
         }
-        valide=(strlen(tentative)==LONGUEUR_COMBINAISON);
-        for (int i=0 ;i<LONGUEUR_COMBINAISON &&valide ;i++){
-
-           bool caractereValide = false;
-
-           for(int j=0 ;j<strlen(COULEURS_DISPONIBLES);j++){
-
-                if(tentative[i]==COULEURS_DISPONIBLES[j]){
-                    caractereValide=true;
+        valide = (strlen(tentative) == LONGUEUR_COMBINAISON);  // Vérifier si la longueur est correcte
+        for (int i = 0; i < LONGUEUR_COMBINAISON && valide; i++){
+            bool caractereValide = false;
+            // Vérifier que chaque caractère est une couleur valide
+            for(int j = 0; j < strlen(COULEURS_DISPONIBLES); j++){
+                if(tentative[i] == COULEURS_DISPONIBLES[j]){
+                    caractereValide = true;
                     break;
-
                 }
-           }
-           if(!caractereValide)
-               valide=false;
-
-       }
+            }
+            if(!caractereValide)
+                valide = false;  // Si un caractère est invalide, la tentative est invalidée
+        }
         if(!valide)
-            cout<<"Les caractere saisie ne sont pas valide ou trop de saisie"<<endl;
+            cout << "Les caractères saisis ne sont pas valides ou trop nombreux" << endl;
     } while(!valide);
+}
 
- }
-
+// Fonction pour calculer les indices (bien placés et mal placés)
 void calculerIndices(const char combinaisonSecrete[], const char tentative[], int& bienPlaces, int& malPlaces) {
     bool marqueSecret[LONGUEUR_COMBINAISON] = {false};
     bool marqueTentative[LONGUEUR_COMBINAISON] = {false};
@@ -114,6 +113,7 @@ void calculerIndices(const char combinaisonSecrete[], const char tentative[], in
     bienPlaces = 0;
     malPlaces = 0;
 
+    // Comparer les couleurs aux bonnes positions (bien placés)
     for (int i = 0; i < LONGUEUR_COMBINAISON; ++i) {
         if (tentative[i] == combinaisonSecrete[i]) {
             bienPlaces++;
@@ -122,9 +122,10 @@ void calculerIndices(const char combinaisonSecrete[], const char tentative[], in
         }
     }
 
+    // Comparer les couleurs mal placées
     for (int i = 0; i < LONGUEUR_COMBINAISON; ++i) {
         if (!marqueTentative[i]) { // Ne considérer que les caractères non déjà utilisés
-            bool trouver = false;    // Variable pour suivre si une correspondance est trouvée
+            bool trouver = false;
             for (int j = 0; j < LONGUEUR_COMBINAISON && !trouver; ++j) {
                 if (!marqueSecret[j] && tentative[i] == combinaisonSecrete[j]) {
                     malPlaces++;
@@ -136,6 +137,7 @@ void calculerIndices(const char combinaisonSecrete[], const char tentative[], in
     }
 }
 
+// Fonction pour afficher l'état du jeu : tentatives restantes et historique
 void afficherEtatJeu(int tentativesRestantes, const char historique[][LONGUEUR_COMBINAISON + 1], const int bienPlaces[], const int malPlaces[], int tentativesUtilisées) {
     clearConsole();
     cout << "=============================" << endl;
@@ -149,11 +151,13 @@ void afficherEtatJeu(int tentativesRestantes, const char historique[][LONGUEUR_C
              << " - Bien placés : " << bienPlaces[i]
              << ", Mal placés : " << malPlaces[i] << endl;
     }
+    // Afficher un message pour les tentatives restantes
     for (int i = tentativesUtilisées; i < TENTATIVES_MAX; ++i) {
         cout << i + 1 << ". -----  - Bien placés : -, Mal placés : -" << endl;
     }
 }
 
+// Fonction pour afficher la fin de la partie et la combinaison secrète
 void afficherFinDePartie(bool victoire, const char combinaisonSecrete[]) {
     cout << "=============================" << endl;
     cout << "       Partie Terminée       " << endl;
@@ -166,6 +170,7 @@ void afficherFinDePartie(bool victoire, const char combinaisonSecrete[]) {
     cout << "La combinaison était : " << combinaisonSecrete << endl;
 }
 
+// Fonction pour demander à l'utilisateur s'il veut rejouer
 bool demanderRejouer() {
     char choix;
     cout << "Rejouer ? (O/N) : ";
@@ -173,6 +178,7 @@ bool demanderRejouer() {
     return (choix == 'O' || choix == 'o');
 }
 
+// Fonction principale pour jouer une partie du jeu
 void jouerPartie() {
     char combinaisonSecrete[LONGUEUR_COMBINAISON + 1];
     char tentative[LONGUEUR_COMBINAISON + 1];
@@ -182,15 +188,16 @@ void jouerPartie() {
 
     int tentativesRestantes = TENTATIVES_MAX;
     int tentativesUtilisées = 0;
-    bool gagner=false;
-    bool sortie=false;
+    bool gagner = false;
+    bool sortie = false;
 
-    genererCombinaison(combinaisonSecrete);
+    genererCombinaison(combinaisonSecrete);  // Générer la combinaison secrète
 
+    // Boucle de jeu jusqu'à ce que l'utilisateur ait gagné ou utilisé toutes ses tentatives
     while (tentativesRestantes > 0 && !sortie) {
         afficherEtatJeu(tentativesRestantes, historique, bienPlaces, malPlaces, tentativesUtilisées);
 
-        lireTentative(tentative);
+        lireTentative(tentative);  // Demander la tentative de l'utilisateur
         calculerIndices(combinaisonSecrete, tentative, bienPlaces[tentativesUtilisées], malPlaces[tentativesUtilisées]);
 
         // Copier la tentative dans l'historique
@@ -202,12 +209,13 @@ void jouerPartie() {
         tentativesUtilisées++;
         tentativesRestantes--;
 
+        // Vérifier si l'utilisateur a gagné
         if (bienPlaces[tentativesUtilisées - 1] == LONGUEUR_COMBINAISON) {
             afficherFinDePartie(true, combinaisonSecrete);
-            gagner=true;
+            gagner = true;
             sortie = true;
         }
     }
     if (!gagner)
-    afficherFinDePartie(false, combinaisonSecrete);
+        afficherFinDePartie(false, combinaisonSecrete);
 }
